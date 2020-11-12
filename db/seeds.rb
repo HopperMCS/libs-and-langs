@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+language = Language.create(name: "Ruby", purpose: "General", compiled: false, turing_complete: true)
+performace_rating = PerformanceRating.create()

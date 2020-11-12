@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_045913) do
+ActiveRecord::Schema.define(version: 2020_11_11_004648) do
+
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.string "purpose"
+    t.boolean "compiled"
+    t.boolean "turing_complete"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "libraries", force: :cascade do |t|
+    t.string "name"
+    t.integer "language_id"
+    t.string "source_link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["language_id"], name: "index_libraries_on_language_id"
+  end
+
+  # create_table "performance_rating_tables", force: :cascade do |t|
+  #   t.integer "rating"
+  #   t.string "commentary"
+  # end
+
+  create_table "performance_ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.string "comemntary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
