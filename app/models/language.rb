@@ -1,7 +1,7 @@
 class Language < ApplicationRecord
-  belongs_to :user
-  has_many :performance_ratings
-  has_many :libraries, through: :performance_ratings
+  has_many :libraries
+  has_many :performance_ratings, through: :libraries
 
-  validates :name, :source_link, presence: true
+  validates :name, :purpose, presence: true
+  validates :compiled, :turing_complete, inclusion: { in: [ true, false ] }
 end

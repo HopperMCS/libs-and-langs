@@ -5,5 +5,5 @@ class User < ApplicationRecord
 
   has_many :performance_ratings
   has_many :libraries, through: :performance_ratings
-  has_many :languages, through: :performance_ratings
+  has_many :languages, through: :libraries
 end
