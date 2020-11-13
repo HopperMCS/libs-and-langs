@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :languages do
-    resources :libraries, only: [:show, :new]
+    resources :libraries, only: [:index, :show, :new]
   end
   resources :libraries
   resources :performance_ratings
